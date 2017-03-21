@@ -469,4 +469,18 @@
 
 **Link to work:** 
 
+### Day 56: March 16, 2017 
 
+**Today's Progress**: 30Days30Site Challenge - Event Invitation
+
+**Thoughts:** 
+
+**Link to work:** [Event Invitation](http://sashatran.com/project/demo-2)
+
+### Day 57: March 20, 2017 
+
+**Today's Progress**: 30Days30Site Challenge - Restaurant Menu
+
+**Thoughts:** 
+
+**Link to work:** [Restaurant Menu](http://sashatran.com/project/demo-4)
