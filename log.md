@@ -484,3 +484,46 @@
 **Thoughts:** 
 
 **Link to work:** [Restaurant Menu](http://sashatran.com/project/demo-4)
+
+### Day 58: April 10, 2017 
+
+**Today's Progress**: CSS Torii Shrine Gate
+
+**Thoughts:** 
+
+**Link to work:** [Torii Shrine Gate](https://codepen.io/sashatran/full/ZegwMq/)
+
+
+### Day 59: April 19, 2017 
+
+**Today's Progress**: Window Scroll Effect
+
+**Thoughts:** 
+
+**Link to work:** [Window Scroll Effect](https://codepen.io/sashatran/full/Njxzom/)
+
+### Day 60: April 26, 2017 
+
+**Today's Progress**: Input UI Animation
+
+**Thoughts:** 
+
+**Link to work:** [Input UI Animation](https://codepen.io/sashatran/full/dWNYEv/)
+
+### Day 61: April 28, 2017 
+
+**Today's Progress**: UI + React 
+
+**Thoughts:** 
+
+**Link to work:** [UI + React](https://codepen.io/sashatran/full/jmBbNL/)
+
+
+### Day 62: May 2, 2017 
+
+**Today's Progress**: Button UI + React 
+
+**Thoughts:** 
+
+**Link to work:** [Button UI + React](https://codepen.io/sashatran/full/xdrGjL/)
+
