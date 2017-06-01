@@ -527,3 +527,20 @@
 
 **Link to work:** [Button UI + React](https://codepen.io/sashatran/full/xdrGjL/)
 
+
+### Day 63: May 30, 2017 
+
+**Today's Progress**: Hover Effect with Pseudo Elements
+
+**Thoughts:** 
+
+**Link to work:** [Hover Effect with Pseudo Elements](https://codepen.io/sashatran/pen/KmOwao)
+
+### Day 64: May 31, 2017 
+
+**Today's Progress**: Slide Open SVG Experiment
+
+**Thoughts:** 
+
+**Link to work:** [Slide Open SVG Experiment](https://codepen.io/sashatran/full/xdeMLY)
+
