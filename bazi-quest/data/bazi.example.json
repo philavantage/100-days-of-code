@@ -1,0 +1,13 @@
+{
+  "_comment": "SAMPLE ONLY. Copy to data/bazi.json and replace with your chart. Name/birth fields are ignored by the anonymizer and never sent anywhere.",
+  "name": "Example Person",
+  "birth": { "date": "1990-01-01", "time": "12:00", "place": "Somewhere" },
+  "pillars": {
+    "year": "庚午",
+    "month": "Xin Si",
+    "day": "Jia Zi",
+    "hour": { "stem": "辛", "branch": "未" }
+  },
+  "strength": "weak",
+  "favorable": ["Water", "Wood"]
+}

@@ -1,0 +1,9 @@
+[
+  { "name": "HTML", "level": 5, "category": "Frontend" },
+  { "name": "CSS", "level": 4, "category": "Frontend" },
+  { "name": "JavaScript", "level": 3, "category": "Frontend" },
+  { "name": "Problem Solving", "level": 4, "category": "Core" },
+  { "name": "Git & GitHub", "level": 2, "category": "Tools" },
+  { "name": "UI Design", "level": 3, "category": "Design" },
+  { "name": "APIs", "level": 1, "category": "Backend" }
+]

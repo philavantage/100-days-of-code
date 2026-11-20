@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bazi Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'><rect width='8' height='8' fill='%232b2d5c'/><rect x='2' y='1' width='4' height='3' fill='%23ffd9b8'/><rect x='2' y='4' width='4' height='3' fill='%234fb24a'/><rect x='3' y='2' width='1' height='1' fill='%23000'/><rect x='5' y='2' width='1' height='1' fill='%23000'/></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo px">BAZI QUEST<small>Your elements · your skills · your next build</small></h1>
+    <div class="top-actions">
+      <div class="privacy" title="What gets shared with the Oracle">
+        <span>🔒 Share:</span>
+        <label><input type="radio" name="privacy" value="elements" checked /> elements only</label>
+        <label><input type="radio" name="privacy" value="pillars" /> + pillars</label>
+      </div>
+      <button class="btn blue" id="btn-import">Import Bazi</button>
+      <input type="file" id="file-bazi" accept=".json,.txt,application/json,text/plain" class="sr" />
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Scene -->
+    <section class="scene-wrap" aria-label="Game scene">
+      <div class="scene" id="scene-box">
+        <canvas id="scene" tabindex="0" aria-label="Your character in a pixel world. Click to walk, arrow keys to move, space to jump, click the owl to chat."></canvas>
+        <div class="nametag" id="tag-hero">Adventurer</div>
+        <div class="nametag npc" id="tag-owl">Oracle Owl</div>
+        <div class="scene-hint">← → move · SPACE jump · click owl to talk</div>
+      </div>
+    </section>
+
+    <!-- Character info -->
+    <section class="win" id="win-char">
+      <div class="win-title"><span>CHARACTER INFO</span><span class="tag" id="char-src">…</span></div>
+      <div class="win-body">
+        <div class="char-head">
+          <canvas class="portrait" id="portrait" width="96" height="96"></canvas>
+          <div>
+            <p class="char-name" id="char-name">…</p>
+            <div class="char-sub" id="char-class">…</div>
+            <div id="char-chips"></div>
+          </div>
+        </div>
+        <div class="stats" id="vitals"></div>
+        <div class="sect">ELEMENT STATS</div>
+        <div class="stats" id="elements"></div>
+        <p class="lore" id="lore"></p>
+      </div>
+    </section>
+
+    <!-- Chat -->
+    <section class="win" id="win-chat">
+      <div class="win-title"><span>🦉 ORACLE OWL · IDEA QUESTS</span><button class="btn sm ghost" id="btn-clear">New chat</button></div>
+      <div class="win-body">
+        <div class="chat-log" id="chat-log" aria-live="polite"></div>
+        <div class="chips" id="chips">
+          <button data-q="Give me 3 quests that fit my elements and skills.">✨ 3 quests for me</button>
+          <button data-q="Something I could finish this weekend.">⏳ Weekend-sized</button>
+          <button data-q="A small game I could build with my skills.">🎮 A tiny game</button>
+          <button data-q="An idea that balances my weakest element and stretches my lowest skill.">⚖️ Balance my weak element</button>
+          <button data-q="An ambitious idea that uses AI.">🤖 Something with AI</button>
+          <button data-q="Give me more, totally different ideas.">🎲 Reroll</button>
+        </div>
+        <form class="composer" id="composer">
+          <textarea id="input" rows="2" placeholder="Ask the Oracle… (Enter to send, Shift+Enter for newline)"></textarea>
+          <button class="btn" id="btn-send" type="submit">SEND</button>
+        </form>
+        <div class="status-line"><span id="status">…</span><span id="privacy-note"></span></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="win" id="win-skills">
+      <div class="win-title"><span>SKILLS</span><span class="tag" id="sp">SP 0</span></div>
+      <div class="win-body">
+        <div id="skill-list"></div>
+        <form class="add-skill" id="add-skill">
+          <input id="sk-name" placeholder="New skill (e.g. React)" maxlength="40" required />
+          <select id="sk-cat">
+            <option>Frontend</option><option>Backend</option><option>Design</option><option>Tools</option><option>Data</option><option>Core</option><option>Other</option>
+          </select>
+          <button class="btn sm" type="submit">+ LEARN</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Quests -->
+    <section class="win" id="win-quests">
+      <div class="win-title"><span>QUEST LOG</span><span class="tag" id="quest-count">0 / 0</span></div>
+      <div class="win-body"><div id="quest-list"></div></div>
+    </section>
+  </main>
+
+  <!-- HUD -->
+  <footer class="hud">
+    <span class="lv" id="hud-lv">LV.1</span>
+    <span class="who" id="hud-name">…</span>
+    <div class="hud-bars">
+      <div class="hud-bar"><i id="hud-hp" style="background:var(--hp)"></i><span id="hud-hp-t">HP</span></div>
+      <div class="hud-bar"><i id="hud-mp" style="background:var(--mp)"></i><span id="hud-mp-t">MP</span></div>
+      <div class="hud-bar"><i id="hud-exp" style="background:var(--exp)"></i><span id="hud-exp-t">EXP</span></div>
+    </div>
+  </footer>
+
+  <!-- Import preview modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="win">
+      <div class="win-title"><span id="modal-title">ANONYMIZED PREVIEW</span><button class="btn sm ghost" id="modal-x">X</button></div>
+      <div class="win-body">
+        <p>Your file was read <b>in this browser</b>. Only the profile below is kept and shared with the Oracle — everything else is discarded.</p>
+        <div id="modal-dropped"></div>
+        <pre id="modal-json"></pre>
+        <div style="text-align:right">
+          <button class="btn ghost" id="modal-cancel">Cancel</button>
+          <button class="btn" id="modal-ok">Use this profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

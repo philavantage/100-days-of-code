@@ -1,0 +1,5 @@
+node_modules/
+.env
+# Your real bazi chart stays on your machine only
+data/bazi.json
+data/*.private.json

@@ -5,6 +5,7 @@
 * [Log - click here to see my progress](log.md)
 * [FAQ](FAQ.md)
 * [Resources](resources.md)
+* [⚔️ Bazi Quest – pixel RPG profile + AI project-idea oracle](bazi-quest/)
 
 ## If you've decided to join:
 1. Read [Join the #100DaysOfCode](https://medium.freecodecamp.com/join-the-100daysofcode-556ddb4579e4)

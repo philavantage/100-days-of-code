@@ -1,0 +1,13 @@
+{
+  "name": "bazi-quest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pixel RPG profile + Claude-powered project idea oracle, inspired by an anonymized bazi chart",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.11.0"
+  }
+}
